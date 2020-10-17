@@ -34,6 +34,8 @@ class LoginScreen extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
                             child: TextFormField(
+                              keyboardType: TextInputType.emailAddress,
+                              autocorrect: false,
                               style: TextStyle(
                                 color: Colors.white
                               ),

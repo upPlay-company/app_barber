@@ -2,20 +2,13 @@ import 'package:app_barbearia/screens/base/base_screen.dart';
 import 'package:app_barbearia/screens/inicial/inicial_screen.dart';
 import 'package:app_barbearia/screens/login/login_screen.dart';
 import 'package:app_barbearia/screens/signup/signup_screen.dart';
-import 'package:app_barbearia/stores/page_store.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:parse_server_sdk/parse_server_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await InicializeParse();
-  setupLocation();
   runApp(MyApp());
-}
-
-void setupLocation() {
-  GetIt.I.registerSingleton(PageStore());
 }
 
 Future<void> InicializeParse() async {

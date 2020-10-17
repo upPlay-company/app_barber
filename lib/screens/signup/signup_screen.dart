@@ -1,5 +1,7 @@
 import 'package:app_barbearia/styles/style_screen_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 class SignupScreen extends StatelessWidget {
   @override
@@ -30,31 +32,37 @@ class SignupScreen extends StatelessWidget {
                     Form(
                       child: Column(
                         children: [
+                          Observer(builder: (_){
+                            return Padding(
+                              padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                              child: TextFormField(
+                                autocorrect: false,
+                                style: TextStyle(
+                                    color: Colors.white
+                                ),
+                                decoration: InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                        borderSide: BorderSide(color: Colors.white)
+                                    ),
+                                    labelText: 'Nome Completo',
+                                    labelStyle: TextStyle(
+                                        fontFamily: 'Principal',
+                                        fontSize: 15, color: Colors.white
+                                    ),
+                                ),
+                              ),
+                            );
+                          }),
                           Padding(
                             padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
                             child: TextFormField(
+                              keyboardType: TextInputType.emailAddress,
+                              autocorrect: false,
                               style: TextStyle(
                                   color: Colors.white
                               ),
                               decoration: InputDecoration(
-                                enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white)
-                                ),
-                                labelText: 'Nome Completo',
-                                labelStyle: TextStyle(
-                                    fontFamily: 'Principal',
-                                    fontSize: 15, color: Colors.white
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
-                            child: TextFormField(
-                              style: TextStyle(
-                                  color: Colors.white
-                              ),
-                              decoration: InputDecoration(
+                                isDense: true,
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: Colors.white)
                                 ),
